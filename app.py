@@ -8,12 +8,8 @@ with sync_playwright() as playwright:
     page = browser.new_page()
     # Visit playwright website
     page.goto("https://playwright.dev/python")
-    # Locate a link element with 'Docs' text
-    # docs_link = page.get_by_role('link', name="Docs")
-    docs_link = page.get_by_role('link', name="Docs")
+    # Locator
+    docs_link = page.get_by_role('link', name="Get Started")
     docs_link.click()
-    # Get the url
-    print("Docs: ", page.url)
 
     browser.close()
-
